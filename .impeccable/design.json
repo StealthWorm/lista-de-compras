@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-02T21:12:00-03:00",
+  "title": "Design System: Lista de Compras",
+  "extensions": {
+    "colorMeta": {
+      "clay": {
+        "role": "primary",
+        "displayName": "Terracota",
+        "canonical": "#d96b43",
+        "tonalRamp": [
+          "oklch(15.0% 0.149 40.1)",
+          "oklch(26.4% 0.149 40.1)",
+          "oklch(37.9% 0.149 40.1)",
+          "oklch(49.3% 0.149 40.1)",
+          "oklch(60.7% 0.149 40.1)",
+          "oklch(72.1% 0.149 40.1)",
+          "oklch(83.6% 0.149 40.1)",
+          "oklch(95.0% 0.149 40.1)"
+        ]
+      },
+      "moss": {
+        "role": "secondary",
+        "displayName": "Verde-Musgo",
+        "canonical": "#4a5d4e",
+        "tonalRamp": [
+          "oklch(15.0% 0.034 151.2)",
+          "oklch(26.4% 0.034 151.2)",
+          "oklch(37.9% 0.034 151.2)",
+          "oklch(49.3% 0.034 151.2)",
+          "oklch(60.7% 0.034 151.2)",
+          "oklch(72.1% 0.034 151.2)",
+          "oklch(83.6% 0.034 151.2)",
+          "oklch(95.0% 0.034 151.2)"
+        ]
+      },
+      "moss-deep": {
+        "role": "secondary",
+        "displayName": "Verde-Musgo Profundo",
+        "canonical": "#2f3e33",
+        "tonalRamp": [
+          "oklch(15.0% 0.027 153.0)",
+          "oklch(26.4% 0.027 153.0)",
+          "oklch(37.9% 0.027 153.0)",
+          "oklch(49.3% 0.027 153.0)",
+          "oklch(60.7% 0.027 153.0)",
+          "oklch(72.1% 0.027 153.0)",
+          "oklch(83.6% 0.027 153.0)",
+          "oklch(95.0% 0.027 153.0)"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Areia",
+        "canonical": "#f5f2eb",
+        "tonalRamp": [
+          "oklch(15.0% 0.010 87.5)",
+          "oklch(26.4% 0.010 87.5)",
+          "oklch(37.9% 0.010 87.5)",
+          "oklch(49.3% 0.010 87.5)",
+          "oklch(60.7% 0.010 87.5)",
+          "oklch(72.1% 0.010 87.5)",
+          "oklch(83.6% 0.010 87.5)",
+          "oklch(95.0% 0.010 87.5)"
+        ]
+      },
+      "sand-soft": {
+        "role": "neutral",
+        "displayName": "Areia Suave",
+        "canonical": "#e8e2d5",
+        "tonalRamp": [
+          "oklch(15.0% 0.019 86.1)",
+          "oklch(26.4% 0.019 86.1)",
+          "oklch(37.9% 0.019 86.1)",
+          "oklch(49.3% 0.019 86.1)",
+          "oklch(60.7% 0.019 86.1)",
+          "oklch(72.1% 0.019 86.1)",
+          "oklch(83.6% 0.019 86.1)",
+          "oklch(95.0% 0.019 86.1)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Grafite",
+        "canonical": "#2b2d2f",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 0.0)",
+          "oklch(26.4% 0.000 0.0)",
+          "oklch(37.9% 0.000 0.0)",
+          "oklch(49.3% 0.000 0.0)",
+          "oklch(60.7% 0.000 0.0)",
+          "oklch(72.1% 0.000 0.0)",
+          "oklch(83.6% 0.000 0.0)",
+          "oklch(95.0% 0.000 0.0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The page title on the moss plate. Below 380px the size is 2.35rem."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "The item name. Below 380px the size is 1.2rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading text. The tally and fields step up to 1.0625rem."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels in deep moss, ordinary capitalization, weight 700."
+      }
+    },
+    "shadows": [
+      {
+        "name": "badge-lift",
+        "value": "drop-shadow(0 14px 12px rgba(47, 62, 51, 0.22))",
+        "purpose": "Lifts each item row so the shadow follows the badge silhouette."
+      },
+      {
+        "name": "action-lift",
+        "value": "0 12px 22px -14px rgba(47, 62, 51, 0.7)",
+        "purpose": "Short lift under Adicionar only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The shared ease for color, press, count steps, and row entrance."
+      },
+      {
+        "name": "add",
+        "value": "background-color 0.3s, transform 0.3s",
+        "purpose": "Adicionar hover color and the 1px press."
+      },
+      {
+        "name": "stepper-hover",
+        "value": "background-color 0.25s",
+        "purpose": "Stepper button fill on hover."
+      },
+      {
+        "name": "count-step",
+        "value": "0.28s, translateY 12px, blur 3px",
+        "purpose": "The quantity digit slides and clears as it changes."
+      },
+      {
+        "name": "row-enter",
+        "value": "0.42s, clip-path inset round 1.15rem, blur 8px",
+        "purpose": "A new badge reveals from the top; leaving reverses the clip."
+      },
+      {
+        "name": "reduced",
+        "value": "0.01s opacity",
+        "purpose": "When motion is reduced, steps and rows fade with no slide or blur."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "380px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Adicionar, the only filled action, in the composer row beside the stepper.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Adicionar</button>",
+      "css": ".ds-btn-primary { width: 100%; min-height: 3.25rem; border: 0; border-radius: 0.95rem; background: #d96b43; color: #f5f2eb; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 1.25rem; font-weight: 700; padding: 0.85rem 1.2rem; box-shadow: 0 12px 22px -14px rgba(47, 62, 51, 0.7); cursor: pointer; transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: color-mix(in srgb, #d96b43 82%, #2f3e33); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid #d96b43; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "The composer name field, borderless Areia Suave with a moss placeholder and a Terracota caret.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Item</span><input class=\"ds-input\" type=\"text\" placeholder=\"Arroz, leite, banana…\" /></label>",
+      "css": ".ds-field { display: grid; gap: 0.4rem; } .ds-field-label { font-family: \"Atkinson Hyperlegible\", sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.45; color: #2f3e33; } .ds-input { width: 100%; border: 0; border-radius: 0.9rem; background: #e8e2d5; color: #2b2d2f; caret-color: #d96b43; padding: 0.9rem 1rem; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 1.0625rem; line-height: 1.35; } .ds-input::placeholder { color: #4a5d4e; opacity: 1; } .ds-input:focus-visible { outline: 2px solid #d96b43; outline-offset: 3px; }"
+    },
+    {
+      "name": "Name Field",
+      "kind": "input",
+      "refersTo": "input-name",
+      "description": "The in-badge name editor: the same fill and corner as the composer field, at the item-title size.",
+      "html": "<input class=\"ds-name-input\" type=\"text\" value=\"Leite integral\" aria-label=\"Nome de Leite integral\" />",
+      "css": ".ds-name-input { width: 100%; border: 0; border-radius: 0.9rem; background: #e8e2d5; color: #2b2d2f; caret-color: #d96b43; padding: 0.45rem 0.7rem; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 1.35rem; font-weight: 700; line-height: 1.25; } .ds-name-input:focus-visible { outline: 2px solid #d96b43; outline-offset: 3px; }"
+    },
+    {
+      "name": "Plate",
+      "kind": "nav",
+      "refersTo": "plate",
+      "description": "The full-width deep-moss header: the title, then the item tally.",
+      "html": "<header class=\"ds-plate\"><div class=\"ds-plate-column\"><h1 class=\"ds-display\">Lista de Compras</h1><p class=\"ds-tally\">2 itens</p></div></header>",
+      "css": ".ds-plate { background: #2f3e33; color: #f5f2eb; padding: 2.75rem 1.25rem 1.35rem; } .ds-plate-column { width: min(34rem, 100%); margin-inline: auto; } .ds-display { margin: 0; font-family: \"Bricolage Grotesque\", sans-serif; font-weight: 600; font-size: clamp(2.5rem, 7vw, 3.4rem); line-height: 0.95; letter-spacing: -0.03em; } .ds-tally { margin: 0.7rem 0 0; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 1.0625rem; font-weight: 400; line-height: 1.45; }"
+    },
+    {
+      "name": "Item Badge",
+      "kind": "custom",
+      "refersTo": "badge",
+      "description": "One list line: the name and Remover on the left, a vertical moss stepper on the right.",
+      "html": "<div class=\"ds-row\"><article class=\"ds-badge\"><div class=\"ds-badge-copy\"><button class=\"ds-name\" type=\"button\">Leite integral</button><button class=\"ds-remove\" type=\"button\">Remover</button></div><div class=\"ds-stepper\" role=\"group\" aria-label=\"Quantidade de Leite integral\"><button class=\"ds-stepper-btn\" type=\"button\" aria-label=\"Aumentar quantidade\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"></path></svg></button><span class=\"ds-stepper-value\">3</span><button class=\"ds-stepper-btn\" type=\"button\" aria-label=\"Diminuir quantidade\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path></svg></button></div></article></div>",
+      "css": ".ds-row { filter: drop-shadow(0 14px 12px rgba(47, 62, 51, 0.22)); } .ds-badge { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.15rem; align-items: center; min-height: 8.6rem; padding: 0.95rem 0.7rem 0.95rem 1.15rem; border-radius: 1.15rem; background: #e8e2d5; } .ds-badge-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 0.2rem; min-width: 0; } .ds-name { margin: 0; padding: 0.15rem 0; border: 0; background: transparent; color: #2b2d2f; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 1.35rem; font-weight: 700; line-height: 1.25; text-align: left; cursor: pointer; } .ds-name:focus-visible, .ds-remove:focus-visible, .ds-stepper-btn:focus-visible { outline: 2px solid #d96b43; outline-offset: 3px; } .ds-remove { min-height: 2.75rem; margin: 0; padding: 0.35rem 0.75rem 0.35rem 0; border: 0; background: transparent; color: #2f3e33; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 0.98rem; font-weight: 700; text-decoration: underline; text-underline-offset: 0.22em; cursor: pointer; } .ds-remove:hover { color: #2b2d2f; } .ds-stepper { display: flex; flex-direction: column; align-items: center; width: 3.35rem; padding: 0.28rem; border-radius: 0.95rem; background: #4a5d4e; color: #f5f2eb; } .ds-stepper-btn { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 0; border-radius: 0.7rem; background: transparent; color: inherit; cursor: pointer; transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-stepper-btn:hover { background: #2f3e33; } .ds-stepper-value { display: grid; place-items: center; width: 100%; height: 1.85rem; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; } .ds-icon { width: 1.35rem; height: 1.35rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Quantity Stepper",
+      "kind": "custom",
+      "refersTo": "stepper",
+      "description": "The vertical count: plus above the number, minus below, used in the composer and on each badge.",
+      "html": "<div class=\"ds-stepper\" role=\"group\" aria-label=\"Quantidade\"><button class=\"ds-stepper-btn\" type=\"button\" aria-label=\"Aumentar quantidade\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"></path></svg></button><span class=\"ds-stepper-value\">1</span><button class=\"ds-stepper-btn\" type=\"button\" aria-label=\"Diminuir quantidade\" disabled><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path></svg></button></div>",
+      "css": ".ds-stepper { display: flex; flex-direction: column; align-items: center; width: 3.35rem; padding: 0.28rem; border-radius: 0.95rem; background: #4a5d4e; color: #f5f2eb; } .ds-stepper-btn { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 0; border-radius: 0.7rem; background: transparent; color: inherit; cursor: pointer; transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-stepper-btn:hover:not(:disabled) { background: #2f3e33; } .ds-stepper-btn:disabled { opacity: 0.38; cursor: not-allowed; } .ds-stepper-btn:focus-visible { outline: 2px solid #d96b43; outline-offset: 3px; } .ds-stepper-value { display: grid; place-items: center; width: 100%; height: 1.85rem; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; } .ds-icon { width: 1.35rem; height: 1.35rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Remove",
+      "kind": "button",
+      "refersTo": "button-remove",
+      "description": "The text action under an item name. Hover shifts deep moss to Grafite.",
+      "html": "<button class=\"ds-remove\" type=\"button\">Remover</button>",
+      "css": ".ds-remove { min-height: 2.75rem; margin: 0; padding: 0.35rem 0.75rem 0.35rem 0; border: 0; background: transparent; color: #2f3e33; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 0.98rem; font-weight: 700; text-decoration: underline; text-underline-offset: 0.22em; cursor: pointer; } .ds-remove:hover { color: #2b2d2f; } .ds-remove:focus-visible { outline: 2px solid #d96b43; outline-offset: 3px; }"
+    },
+    {
+      "name": "Alert",
+      "kind": "custom",
+      "refersTo": "alert",
+      "description": "The shared error wash for an empty name on the form or on a row.",
+      "html": "<p class=\"ds-alert\" role=\"alert\">Escreva o nome do item antes de adicionar.</p>",
+      "css": ".ds-alert { margin: 0; padding: 0.75rem 0.9rem; border-radius: 0.75rem; background: color-mix(in srgb, #d96b43 20%, #f5f2eb); color: #2f3e33; font-family: \"Atkinson Hyperlegible\", sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.45; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sand Counter",
+    "overview": "Lista de Compras is a one-hand shopping list on warm paper. The counter is the whole picture: a deep-moss plate across the top, then a narrow column where a name, a quantity, and a terracotta add action keep each line in this browser. Rows sit far enough apart for a thumb; inside a badge the type is large and the stepper is tall. The browser mark repeats the same three tones: a deep-moss square, Areia bars, and one Terracota dot.\n\nColor works by proportion. Areia is the ground, Areia Suave is every surface you write on, and Grafite is what you read. Moss builds the plate, the steppers, the labels, and the selection. Terracota stays scarce. The pinned brief limited it to Adicionar; the shipped list also uses it for the focus ring, the text caret, and the error wash.\n\nType has two jobs. Bricolage Grotesque carries the title. Atkinson Hyperlegible carries the list, the fields, and the controls, at 400 for reading and 700 for names, labels, and actions. Changes ease out on a quick curve; when motion is reduced they collapse to a near-instant fade.",
+    "keyCharacteristics": [
+      "Full-width deep-moss plate over a centered column capped at 34rem",
+      "Areia ground, Areia Suave fields and badges, Grafite text",
+      "Terracota limited to Adicionar, focus, the caret, and the error wash",
+      "A vertical moss stepper on the right of each badge, with 1.75rem between badges",
+      "Bricolage Grotesque for the title, Atkinson Hyperlegible for everything else",
+      "Soft moss-tinted shadows under Adicionar and each badge"
+    ],
+    "rules": [
+      {
+        "name": "The Terracotta Scarcity Rule",
+        "body": "Terracota fills Adicionar, draws the 2px focus ring, colors the caret, and tints the error wash. It stays off the plate, the badges, the labels, and the item names.",
+        "section": "colors"
+      },
+      {
+        "name": "The Moss Structure Rule",
+        "body": "Moss and deep moss are the structure: the plate, the steppers, the field labels, placeholder text, selection, and the scrollbar.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Display Face Rule",
+        "body": "Bricolage Grotesque is used for the page title only. Every other line is Atkinson Hyperlegible.",
+        "section": "typography"
+      },
+      {
+        "name": "The Narrow Column Rule",
+        "body": "The plate is full width. Under it, the list sits in one centered column at min(34rem, 100%), with 1.25rem of side inset.",
+        "section": "layout"
+      },
+      {
+        "name": "The Thumb Gap Rule",
+        "body": "Item badges stack in a single column with 1.75rem between them.",
+        "section": "layout"
+      },
+      {
+        "name": "The Soft Moss Shadow Rule",
+        "body": "Resting depth is a change of tone: Areia, then Areia Suave, then moss. The only shadows are soft and tinted with deep moss: a drop under each badge and a short lift under Adicionar.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Shared Soft Corner Rule",
+        "body": "Outer shells use a 0.9rem field corner, a 0.95rem corner on Adicionar and the stepper, and a 1.15rem badge corner. Stepper buttons (0.7rem) and the error wash (0.75rem) stay inside that same soft family.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Vertical Count Rule",
+        "body": "Quantity is a vertical stepper: plus above the number, minus below. On a badge it sits on the right; beside Adicionar it sits on the left.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do keep the page on Areia (#f5f2eb) and put fields and item badges on Areia Suave (#e8e2d5).",
+      "Do set the page title in Bricolage Grotesque at weight 600, and every other line in Atkinson Hyperlegible.",
+      "Do keep quantity in a vertical moss stepper: plus above the number, minus below.",
+      "Do leave 1.75rem between item badges.",
+      "Do reserve Terracota for Adicionar, the 2px focus ring, the text caret, and the error wash.",
+      "Do keep the working column at min(34rem, 100%) under a full-width deep-moss plate."
+    ],
+    "donts": [
+      "Don't lay the list out as a card grid or a dashboard.",
+      "Don't paint the plate, badges, labels, or item names with Terracota.",
+      "Don't add a second display face or set the title in a system sans.",
+      "Don't use a hard offset shadow.",
+      "Don't place plus and minus side by side.",
+      "Don't set labels in tracked uppercase, and don't put an eyebrow above the title."
+    ]
+  }
+}
