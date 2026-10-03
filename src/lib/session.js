@@ -22,11 +22,10 @@ export function watchSession(onUser) {
 
 export async function enterWithName(name) {
   const trimmed = name.trim();
-  if (!trimmed) throw new Error('Diga como te chamam nesta lista.');
-  const credential = auth.currentUser
-    ? { user: auth.currentUser }
-    : await signInAnonymously(auth);
-  await updateProfile(credential.user, { displayName: trimmed });
+  const user = auth.currentUser ?? (await signInAnonymously(auth)).user;
+
+  await updateProfile(user, { displayName: trimmed });
   localStorage.setItem(NAME_KEY, trimmed);
-  return { uid: credential.user.uid, name: trimmed };
+
+  return { uid: user.uid, name: trimmed };
 }

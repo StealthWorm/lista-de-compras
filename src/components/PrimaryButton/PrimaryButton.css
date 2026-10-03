@@ -1,0 +1,33 @@
+.primary-button {
+  width: 100%;
+  min-height: 3.25rem;
+  border: 0;
+  border-radius: 0.95rem;
+  background: var(--clay);
+  color: var(--sand);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.85rem 1.2rem;
+  box-shadow: 0 12px 22px -14px rgba(47, 62, 51, 0.7);
+  transition:
+    background-color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.primary-button:hover {
+  background: color-mix(in srgb, var(--clay) 82%, var(--moss-deep));
+}
+
+.primary-button:active {
+  transform: translateY(1px);
+}
+
+.primary-button:disabled {
+  opacity: 0.72;
+}
+
+@media (hover: none) {
+  .primary-button:hover {
+    background: var(--clay);
+  }
+}

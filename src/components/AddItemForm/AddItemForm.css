@@ -1,0 +1,35 @@
+.add-item-form {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.add-item-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 6.25rem;
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.qty-long {
+  display: none;
+}
+
+.qty-input {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+@media (min-width: 40rem) {
+  .add-item-fields {
+    grid-template-columns: minmax(0, 1fr) 6rem;
+  }
+
+  .qty-short {
+    display: none;
+  }
+
+  .qty-long {
+    display: inline;
+  }
+}

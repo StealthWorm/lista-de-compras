@@ -22,6 +22,8 @@ export async function ensureList({ uid, name }) {
     params.get('lista') ||
     localStorage.getItem(LIST_KEY) ||
     crypto.randomUUID();
+
+  // cria a lista se não existir
   const listRef = doc(db, 'lists', listId);
 
   if (!(await getDoc(listRef)).exists()) {
@@ -31,8 +33,10 @@ export async function ensureList({ uid, name }) {
     });
   }
 
+  // cria o membro se não existir
   const memberRef = doc(db, 'lists', listId, 'members', uid);
   const member = await getDoc(memberRef);
+  // atualiza o membro se existir
   await setDoc(
     memberRef,
     member.exists() ? { name } : { name, joinedAt: serverTimestamp() },
@@ -43,10 +47,10 @@ export async function ensureList({ uid, name }) {
   const url = new URL(window.location.href);
   url.searchParams.set('lista', listId);
   window.history.replaceState(null, '', url);
-  return { listId, link: url.toString() };
+  return listId;
 }
 
-const ACTIVE_MS = 45_000;
+const ACTIVE_MS = 45_000; // 45 segundos
 
 export function beat(listId, uid) {
   return updateDoc(doc(db, 'lists', listId, 'members', uid), {
@@ -79,19 +83,23 @@ export function activeMembers(members, now = Date.now(), selfId) {
     });
 }
 
+function itemRecord(item, position, uid) {
+  return {
+    name: item.name,
+    qty: item.qty,
+    picked: item.picked === true,
+    position,
+    updatedAt: serverTimestamp(),
+    updatedBy: uid,
+  };
+}
+
 export async function seedItems(listId, uid, items) {
   const col = collection(db, 'lists', listId, 'items');
   if (!(await getDocs(col)).empty || items.length === 0) return;
   await Promise.all(
     items.map((item, position) =>
-      setDoc(doc(col, item.id), {
-        name: item.name,
-        qty: item.qty,
-        picked: item.picked === true,
-        position,
-        updatedAt: serverTimestamp(),
-        updatedBy: uid,
-      }),
+      setDoc(doc(col, item.id), itemRecord(item, position, uid)),
     ),
   );
 }
@@ -122,6 +130,7 @@ export function watchItems(listId, onItems, onError) {
   );
 }
 
+// enfileira uma auditoria de atividades da lista
 function queueNote(batch, listId, note) {
   if (!note) return;
   batch.set(doc(collection(db, 'lists', listId, 'activity')), {
@@ -134,14 +143,10 @@ function queueNote(batch, listId, note) {
 
 export function putItem(listId, item, uid, position, by) {
   const batch = writeBatch(db);
-  batch.set(doc(db, 'lists', listId, 'items', item.id), {
-    name: item.name,
-    qty: item.qty,
-    picked: item.picked === true,
-    position,
-    updatedAt: serverTimestamp(),
-    updatedBy: uid,
-  });
+  batch.set(
+    doc(db, 'lists', listId, 'items', item.id),
+    itemRecord(item, position, uid),
+  );
   queueNote(batch, listId, { by, type: 'added', itemName: item.name });
   return batch.commit();
 }
@@ -167,6 +172,7 @@ export function removeCloudItem(listId, itemId, note) {
 export async function clearActivity(listId) {
   const snap = await getDocs(collection(db, 'lists', listId, 'activity'));
   const docs = snap.docs;
+
   for (let index = 0; index < docs.length; index += 400) {
     const batch = writeBatch(db);
     docs.slice(index, index + 400).forEach((entry) => batch.delete(entry.ref));
@@ -174,6 +180,7 @@ export async function clearActivity(listId) {
   }
 }
 
+// observa as atividades da lista
 export function watchActivity(listId, onLines) {
   const recent = query(
     collection(db, 'lists', listId, 'activity'),
@@ -182,24 +189,34 @@ export function watchActivity(listId, onLines) {
   );
   return onSnapshot(recent, (snap) => {
     onLines(
-      snap.docs
-        .map((entry) => {
-          const data = entry.data();
-          return { id: entry.id, text: phrase(data) };
-        })
-        .filter((entry) => entry.text),
+      snap.docs.flatMap((entry) => {
+        const line = phrase(entry.data());
+        return line ? [{ id: entry.id, ...line }] : [];
+      }),
     );
   });
 }
 
-function phrase({ by, type, itemName }) {
-  if (type === 'added') return `${by} incluiu ${itemName}`;
-  if (type === 'renamed') return `${by} editou ${itemName}`;
-  if (type === 'qty') return `${by} alterou a quantidade de ${itemName}`;
-  if (type === 'picked') return `${by} marcou ${itemName} como OK`;
-  if (type === 'unpicked') return `${by} desmarcou ${itemName}`;
-  if (type === 'removed') return `${by} removeu ${itemName}`;
-  return '';
+const PHRASES = {
+  added: (by, itemName) => `${by} incluiu ${itemName}`,
+  renamed: (by, itemName) => `${by} editou ${itemName}`,
+  qty: (by, itemName) => `${by} alterou a quantidade de ${itemName}`,
+  picked: (by, itemName) => `${by} marcou ${itemName} como OK`,
+  unpicked: (by, itemName) => `${by} desmarcou ${itemName}`,
+  removed: (by, itemName) => `${by} removeu ${itemName}`,
+};
+
+function phrase({ by, type, itemName, at }) {
+  const text = PHRASES[type]?.(by, itemName) ?? '';
+  if (!text) return null;
+  return { text, time: formatWhen(at) };
+}
+
+function formatWhen(at) {
+  if (!at?.toDate) return '';
+  const date = at.toDate();
+  const pad = (value) => String(value).padStart(2, '0');
+  return `${pad(date.getDate())}/${pad(date.getMonth() + 1)}/${date.getFullYear()} - ${pad(date.getHours())}:${pad(date.getMinutes())}`;
 }
 
 export function saveOrder(listId, ids) {

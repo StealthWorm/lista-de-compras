@@ -1,0 +1,26 @@
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field-label {
+  font-weight: 700;
+  color: var(--moss-deep);
+}
+
+.text-input {
+  width: 100%;
+  border: 0;
+  border-radius: 0.9rem;
+  background: var(--sand-soft);
+  color: var(--ink);
+  caret-color: var(--clay);
+  padding: 0.9rem 1rem;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+}
+
+.text-input::placeholder {
+  color: var(--moss);
+  opacity: 1;
+}

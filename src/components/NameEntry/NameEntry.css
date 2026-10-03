@@ -1,0 +1,15 @@
+.name-entry {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.name-entry-note {
+  margin: 0;
+  max-width: 36ch;
+  color: var(--moss-deep);
+  font-size: 1.125rem;
+}
+
+.event-log-empty {
+  text-align: center;
+}
