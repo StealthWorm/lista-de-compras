@@ -106,7 +106,7 @@
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Default reading text. The tally and fields step up to 1.0625rem."
+        "purpose": "Default reading text. The quantityOfItems and fields step up to 1.0625rem."
       },
       "label": {
         "displayName": "Label",
@@ -193,9 +193,9 @@
       "name": "Plate",
       "kind": "nav",
       "refersTo": "plate",
-      "description": "The full-width deep-moss header: the title, then the item tally.",
-      "html": "<header class=\"ds-plate\"><div class=\"ds-plate-column\"><h1 class=\"ds-display\">Lista de Compras</h1><p class=\"ds-tally\">2 itens</p></div></header>",
-      "css": ".ds-plate { background: #2f3e33; color: #f5f2eb; padding: 2.75rem 1.25rem 1.35rem; } .ds-plate-column { width: min(34rem, 100%); margin-inline: auto; } .ds-display { margin: 0; font-family: \"Bricolage Grotesque\", sans-serif; font-weight: 600; font-size: clamp(2.5rem, 7vw, 3.4rem); line-height: 0.95; letter-spacing: -0.03em; } .ds-tally { margin: 0.7rem 0 0; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 1.0625rem; font-weight: 400; line-height: 1.45; }"
+      "description": "The full-width deep-moss header: the title, then the item quantityOfItems.",
+      "html": "<header class=\"ds-plate\"><div class=\"ds-plate-column\"><h1 class=\"ds-display\">Lista de Compras</h1><p class=\"ds-quantityOfItems\">2 itens</p></div></header>",
+      "css": ".ds-plate { background: #2f3e33; color: #f5f2eb; padding: 2.75rem 1.25rem 1.35rem; } .ds-plate-column { width: min(34rem, 100%); margin-inline: auto; } .ds-display { margin: 0; font-family: \"Bricolage Grotesque\", sans-serif; font-weight: 600; font-size: clamp(2.5rem, 7vw, 3.4rem); line-height: 0.95; letter-spacing: -0.03em; } .ds-quantityOfItems { margin: 0.7rem 0 0; font-family: \"Atkinson Hyperlegible\", sans-serif; font-size: 1.0625rem; font-weight: 400; line-height: 1.45; }"
     },
     {
       "name": "Item Badge",

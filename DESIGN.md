@@ -2,96 +2,96 @@
 name: Lista de Compras
 description: A one-hand shopping list on warm paper, kept in this browser.
 colors:
-  clay: "#d96b43"
-  moss: "#4a5d4e"
-  moss-deep: "#2f3e33"
-  sand: "#f5f2eb"
-  sand-soft: "#e8e2d5"
-  ink: "#2b2d2f"
+  clay: '#d96b43'
+  moss: '#4a5d4e'
+  moss-deep: '#2f3e33'
+  sand: '#f5f2eb'
+  sand-soft: '#e8e2d5'
+  ink: '#2b2d2f'
 typography:
   display:
-    fontFamily: "Bricolage Grotesque, sans-serif"
-    fontSize: "clamp(2.5rem, 7vw, 3.4rem)"
+    fontFamily: 'Bricolage Grotesque, sans-serif'
+    fontSize: 'clamp(2.5rem, 7vw, 3.4rem)'
     fontWeight: 600
     lineHeight: 0.95
-    letterSpacing: "-0.03em"
+    letterSpacing: '-0.03em'
   title:
-    fontFamily: "Atkinson Hyperlegible, sans-serif"
-    fontSize: "1.35rem"
+    fontFamily: 'Atkinson Hyperlegible, sans-serif'
+    fontSize: '1.35rem'
     fontWeight: 700
     lineHeight: 1.25
   body:
-    fontFamily: "Atkinson Hyperlegible, sans-serif"
-    fontSize: "1rem"
+    fontFamily: 'Atkinson Hyperlegible, sans-serif'
+    fontSize: '1rem'
     fontWeight: 400
     lineHeight: 1.45
   label:
-    fontFamily: "Atkinson Hyperlegible, sans-serif"
-    fontSize: "1rem"
+    fontFamily: 'Atkinson Hyperlegible, sans-serif'
+    fontSize: '1rem'
     fontWeight: 700
     lineHeight: 1.45
 rounded:
-  badge: "1.15rem"
-  control: "0.95rem"
-  field: "0.9rem"
-  step: "0.7rem"
+  badge: '1.15rem'
+  control: '0.95rem'
+  field: '0.9rem'
+  step: '0.7rem'
 spacing:
-  inset: "1.25rem"
-  stack: "1.75rem"
-  cluster: "1.15rem"
+  inset: '1.25rem'
+  stack: '1.75rem'
+  cluster: '1.15rem'
 components:
   button-primary:
-    backgroundColor: "{colors.clay}"
-    textColor: "{colors.sand}"
-    rounded: "{rounded.control}"
-    padding: "0.85rem 1.2rem"
+    backgroundColor: '{colors.clay}'
+    textColor: '{colors.sand}'
+    rounded: '{rounded.control}'
+    padding: '0.85rem 1.2rem'
   button-primary-hover:
-    backgroundColor: "color-mix(in srgb, #d96b43 82%, #2f3e33)"
-    textColor: "{colors.sand}"
+    backgroundColor: 'color-mix(in srgb, #d96b43 82%, #2f3e33)'
+    textColor: '{colors.sand}'
   input-field:
-    backgroundColor: "{colors.sand-soft}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.field}"
-    padding: "0.9rem 1rem"
+    backgroundColor: '{colors.sand-soft}'
+    textColor: '{colors.ink}'
+    rounded: '{rounded.field}'
+    padding: '0.9rem 1rem'
   input-name:
-    backgroundColor: "{colors.sand-soft}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.field}"
-    padding: "0.45rem 0.7rem"
+    backgroundColor: '{colors.sand-soft}'
+    textColor: '{colors.ink}'
+    rounded: '{rounded.field}'
+    padding: '0.45rem 0.7rem'
   plate:
-    backgroundColor: "{colors.moss-deep}"
-    textColor: "{colors.sand}"
-    padding: "2.75rem 1.25rem 1.35rem"
+    backgroundColor: '{colors.moss-deep}'
+    textColor: '{colors.sand}'
+    padding: '2.75rem 1.25rem 1.35rem'
   badge:
-    backgroundColor: "{colors.sand-soft}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.badge}"
-    padding: "0.95rem 0.7rem 0.95rem 1.15rem"
+    backgroundColor: '{colors.sand-soft}'
+    textColor: '{colors.ink}'
+    rounded: '{rounded.badge}'
+    padding: '0.95rem 0.7rem 0.95rem 1.15rem'
   stepper:
-    backgroundColor: "{colors.moss}"
-    textColor: "{colors.sand}"
-    rounded: "{rounded.control}"
-    padding: "0.28rem"
-    width: "3.35rem"
+    backgroundColor: '{colors.moss}'
+    textColor: '{colors.sand}'
+    rounded: '{rounded.control}'
+    padding: '0.28rem'
+    width: '3.35rem'
   stepper-button:
-    backgroundColor: "transparent"
-    textColor: "{colors.sand}"
-    rounded: "{rounded.step}"
-    size: "2.75rem"
+    backgroundColor: 'transparent'
+    textColor: '{colors.sand}'
+    rounded: '{rounded.step}'
+    size: '2.75rem'
   stepper-button-hover:
-    backgroundColor: "{colors.moss-deep}"
-    textColor: "{colors.sand}"
+    backgroundColor: '{colors.moss-deep}'
+    textColor: '{colors.sand}'
   button-remove:
-    backgroundColor: "transparent"
-    textColor: "{colors.moss-deep}"
-    padding: "0.35rem 0.75rem 0.35rem 0"
+    backgroundColor: 'transparent'
+    textColor: '{colors.moss-deep}'
+    padding: '0.35rem 0.75rem 0.35rem 0'
   button-remove-hover:
-    textColor: "{colors.ink}"
+    textColor: '{colors.ink}'
   alert:
-    backgroundColor: "color-mix(in srgb, #d96b43 20%, #f5f2eb)"
-    textColor: "{colors.moss-deep}"
-    rounded: "0.75rem"
-    padding: "0.75rem 0.9rem"
+    backgroundColor: 'color-mix(in srgb, #d96b43 20%, #f5f2eb)'
+    textColor: '{colors.moss-deep}'
+    rounded: '0.75rem'
+    padding: '0.75rem 0.9rem'
 ---
 
 # Design System: Lista de Compras
@@ -151,7 +151,7 @@ A warm paper ground, a moss structure, and one terracotta action. The scheme is 
 
 - **Display** (600, clamp(2.5rem, 7vw, 3.4rem), line-height 0.95, letter-spacing -0.03em): The page title on the plate, with balanced wrapping. Below 380px the size is 2.35rem.
 - **Title** (700, 1.35rem, line-height 1.25): The item name, left-aligned, free to wrap. Below 380px it is 1.2rem. Editing replaces it with a field at the same size and weight.
-- **Body** (400, 1rem, line-height 1.45): The default reading text. The tally under the title is 1.0625rem. Fields use 1.0625rem at line-height 1.35. The empty line is 1.125rem, deep moss, capped at 36ch.
+- **Body** (400, 1rem, line-height 1.45): The default reading text. The quantityOfItems under the title is 1.0625rem. Fields use 1.0625rem at line-height 1.35. The empty line is 1.125rem, deep moss, capped at 36ch.
 - **Label** (700, 1rem, line-height 1.45): Field labels in deep moss, in ordinary capitalization. Adicionar is 1.25rem at weight 700. Remover is 0.98rem at weight 700, underlined, with the offset at 0.22em. The stepper count is 1.25rem at weight 700, with tabular figures.
 
 ### Named Rules
@@ -213,7 +213,7 @@ The empty list is one deep-moss line, 1.125rem, max 36ch, 1.5rem below the compo
 
 ### Navigation
 
-The plate is the only header. It is full-width deep moss, padding 2.75rem 1.25rem 1.35rem, with the title and, 0.7rem below it, the tally in Areia at 1.0625rem. There are no links.
+The plate is the only header. It is full-width deep moss, padding 2.75rem 1.25rem 1.35rem, with the title and, 0.7rem below it, the quantityOfItems in Areia at 1.0625rem. There are no links.
 
 ### Item badge
 
