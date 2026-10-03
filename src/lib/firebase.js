@@ -6,13 +6,32 @@ import {
 } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
+function required(name, value) {
+  if (!value) {
+    throw new Error(`Defina ${name} no .env local ou nas variáveis da Vercel.`);
+  }
+  return value;
+}
+
 const firebaseConfig = {
-  apiKey: 'AIzaSyBKPqN0qvSPjFEbCQBWvpfUGvEfvSoeIzQ',
-  authDomain: 'lista-de-compras-38d91.firebaseapp.com',
-  projectId: 'lista-de-compras-38d91',
-  storageBucket: 'lista-de-compras-38d91.firebasestorage.app',
-  messagingSenderId: '660073881318',
-  appId: '1:660073881318:web:475155bcc58295411ea527',
+  apiKey: required('VITE_FIREBASE_API_KEY', import.meta.env.VITE_FIREBASE_API_KEY),
+  authDomain: required(
+    'VITE_FIREBASE_AUTH_DOMAIN',
+    import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  ),
+  projectId: required(
+    'VITE_FIREBASE_PROJECT_ID',
+    import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  ),
+  storageBucket: required(
+    'VITE_FIREBASE_STORAGE_BUCKET',
+    import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  ),
+  messagingSenderId: required(
+    'VITE_FIREBASE_MESSAGING_SENDER_ID',
+    import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  ),
+  appId: required('VITE_FIREBASE_APP_ID', import.meta.env.VITE_FIREBASE_APP_ID),
 };
 
 const app = initializeApp(firebaseConfig);
